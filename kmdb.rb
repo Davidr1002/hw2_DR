@@ -169,6 +169,17 @@ person12.name = "Anne Hathaway"
 person12.save
 
 
+movie = Movie.where({title: "Batman Begins"})[0]
+person = Person.where({name: "Christian Bale"})[0]
+values = {
+  movie_id: movie.id,
+  actor_id: person.id,
+  character_name = "Bruce Wayne"
+}
+
+movie = Movie.new(values)
+movie.save
+
 
 # TODO!
 
@@ -193,3 +204,12 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie
 # TODO!
+
+
+movies = Movie.all
+for movie in movies
+    # company = Company.where(id: contact.company_id)[0]
+    movie = movie.person
+    movie = movie.role
+    puts "#{movie.title} #{person.name} - #{role.character_name}"
+end
