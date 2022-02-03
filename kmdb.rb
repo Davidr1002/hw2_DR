@@ -99,21 +99,21 @@ movie1 = Movie.new
 movie1.title = "Batman Begins"
 movie1.year_released = "2005"
 movie1.rated = "PG-13"
-movie1.director_id = 1
+movie1.director_id = "1"
 movie1.save
 
 movie2 = Movie.new
 movie2.title = "The Dark Knight"
 movie2.year_released = "2008"
 movie2.rated = "PG-13"
-movie2.director_id = 1
+movie2.director_id = "1"
 movie2.save
 
 movie3 = Movie.new
 movie3.title = "The Dark Knight Rises"
 movie3.year_released = "2012"
 movie3.rated = "PG-13"
-movie3.director_id = 1
+movie3.director_id = "1"
 movie3.save
 
 person1 = Person.new
@@ -169,16 +169,16 @@ person12.name = "Anne Hathaway"
 person12.save
 
 
-movie = Movie.where({title: "Batman Begins"})[0]
-person = Person.where({name: "Christian Bale"})[0]
-values = {
-  movie_id: movie.id,
-  actor_id: person.id,
-  character_name = "Bruce Wayne"
-}
+#movie = Movie.where({title: "Batman Begins"})[0]
+#person = Person.where({name: "Christian Bale"})[0]
+#values = {
+#  movie_id: movie.id,
+#  actor_id: person.id,
+ # character_name = "Bruce Wayne"
+#}
 
-movie = Movie.new(values)
-movie.save
+#movie = Movie.new(values)
+#movie.save
 
 
 # TODO!
@@ -210,6 +210,6 @@ movies = Movie.all
 for movie in movies
     # company = Company.where(id: contact.company_id)[0]
     movie = movie.person
-    movie = movie.role
+    person = person.role
     puts "#{movie.title} #{person.name} - #{role.character_name}"
 end

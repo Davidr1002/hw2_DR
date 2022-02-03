@@ -1,3 +1,3 @@
 class Movie < ApplicationRecord
-    has many :people
+#    has many :people
 end
