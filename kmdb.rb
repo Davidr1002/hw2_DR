@@ -116,7 +116,57 @@ movie3.rated = "PG-13"
 movie3.director_id = 1
 movie3.save
 
+person1 = Person.new
+person1.name = "Christian Nolan"
+person1.save
 
+person2 = Person.new
+person2.name = "Christian Bale"
+person2.save
+
+person3 = Person.new
+person3.name = "Michael Caine"
+person3.save
+
+person4 = Person.new
+person4.name = "Liam Neeson"
+person4.save
+
+person5 = Person.new
+person5.name = "Katie Holmes"
+person5.save
+
+person6 = Person.new
+person6.name = "Gary Oldman"
+person6.save
+
+person4 = Person.new
+person4.name = "Liam Neeson"
+person4.save
+
+person7 = Person.new
+person7.name = "Heath Ledger"
+person7.save
+
+person8 = Person.new
+person8.name = "Aaron Eckhart"
+person8.save
+
+person9 = Person.new
+person9.name = "Maggie Gyllenhaal"
+person9.save
+
+person10 = Person.new
+person10.name = "Tom Hardy"
+person10.save
+
+person11 = Person.new
+person11.name = "Joseph Gordon-Levitt"
+person11.save
+
+person12 = Person.new
+person12.name = "Anne Hathaway"
+person12.save
 
 
 
@@ -132,7 +182,7 @@ puts ""
 
 movies = Movie.all
 for movie in movies
-    puts "#{movie.title} - #{movie.year_released} - #{movie.rated}"
+    puts "#{movie.title} - #{movie.year_released} - #{movie.rated} "
 end
 
 # Prints a header for the cast output
