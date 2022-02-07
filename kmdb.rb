@@ -70,20 +70,20 @@
 # Use `Model.destroy_all` code.
 # TODO!
 Movie.destroy_all
-Person.destroy_all
+People.destroy_all
 Role.destroy_all
 
 # Generate models and tables, according to the domain model
+
+#rails generate model People
+    #t.string :name
+#rails db:migrate
 
 #rails generate model Movie
     #t.string :title
     #t.string :year_released
     #t.string :rated
     #t.integer :director_id
-#rails db:migrate
-
-#rails generate model Person
-    #t.string :name
 #rails db:migrate
 
 #rails generate model Role
@@ -99,7 +99,7 @@ movie1 = Movie.new
 movie1.title = "Batman Begins"
 movie1.year_released = "2005"
 movie1.rated = "PG-13"
-movie1.director_id = "1"
+movie1.person_id = christopher_nolan.id
 movie1.save
 
 movie2 = Movie.new
@@ -116,57 +116,53 @@ movie3.rated = "PG-13"
 movie3.director_id = "1"
 movie3.save
 
-person1 = Person.new
-person1.name = "Christian Nolan"
-person1.save
+christopher_nolan = Person.new
+christopher_nolan.name = "Christian Nolan"
+christopher_nolan.save
 
-person2 = Person.new
-person2.name = "Christian Bale"
-person2.save
+christian_bale = Person.new
+christian_bale.name = "Christian Bale"
+christian_bale.save
 
-person3 = Person.new
-person3.name = "Michael Caine"
-person3.save
+michael_caine = Person.new
+michael_caine.name = "Michael Caine"
+michael_caine.save
 
-person4 = Person.new
-person4.name = "Liam Neeson"
-person4.save
+liam_neeson = Person.new
+liam_neeson.name = "Liam Neeson"
+liam_neeson.save
 
-person5 = Person.new
-person5.name = "Katie Holmes"
-person5.save
+katie_holmes = Person.new
+katie_holmes.name = "Katie Holmes"
+katie_holmes.save
 
-person6 = Person.new
-person6.name = "Gary Oldman"
-person6.save
+gary_oldman = Person.new
+gary_oldman.name = "Gary Oldman"
+gary_oldman.save
 
-person4 = Person.new
-person4.name = "Liam Neeson"
-person4.save
+heath_ledger = Person.new
+heath_ledger.name = "Heath Ledger"
+heath_ledger.save
 
-person7 = Person.new
-person7.name = "Heath Ledger"
-person7.save
+aaron_eckhart = Person.new
+aaron_eckhart.name = "Aaron Eckhart"
+aaron_eckhart.save
 
-person8 = Person.new
-person8.name = "Aaron Eckhart"
-person8.save
+maggie_gyllenhaal = Person.new
+maggie_gyllenhaal.name = "Maggie Gyllenhaal"
+maggie_gyllenhaal.save
 
-person9 = Person.new
-person9.name = "Maggie Gyllenhaal"
-person9.save
+tom_hardy = Person.new
+tom_hardy.name = "Tom Hardy"
+tom_hardy.save
 
-person10 = Person.new
-person10.name = "Tom Hardy"
-person10.save
+joseph_gordon_levitt = Person.new
+joseph_gordon_levitt.name = "Joseph Gordon-Levitt"
+joseph_gordon_levitt.save
 
-person11 = Person.new
-person11.name = "Joseph Gordon-Levitt"
-person11.save
-
-person12 = Person.new
-person12.name = "Anne Hathaway"
-person12.save
+anna_hathaway = Person.new
+anna_hathaway.name = "Anne Hathaway"
+anna_hathaway.save
 
 
 #movie = Movie.where({title: "Batman Begins"})[0]
@@ -191,10 +187,18 @@ puts ""
 # Query the movies data and loop through the results to display the movies output
 # TODO!
 
+#movies = Movie.all
+#for movie in movies
+ #   puts "#{movie.title} - #{movie.year_released} - #{movie.rated} "
+#end
+
+
 movies = Movie.all
 for movie in movies
-    puts "#{movie.title} - #{movie.year_released} - #{movie.rated} "
+    director = Person.where({id: movie.person_id})[0]
+    puts "#{movie.title} #{movie.year_released} #{movie.rated} #{director.name}"
 end
+
 
 # Prints a header for the cast output
 puts ""
@@ -206,10 +210,10 @@ puts ""
 # TODO!
 
 
-movies = Movie.all
-for movie in movies
+#movies = Movie.all
+#for movie in movies
     # company = Company.where(id: contact.company_id)[0]
-    movie = movie.person
-    person = person.role
-    puts "#{movie.title} #{person.name} - #{role.character_name}"
-end
+ #   movie = movie.person
+  #  person = person.role
+   # puts "#{movie.title} #{person.name} - #{role.character_name}"
+#end
